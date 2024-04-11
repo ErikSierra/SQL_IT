@@ -59,8 +59,8 @@ TeamID references TeamID in the Teams table.
 
 For each foreign key, there is an implied reference to the primary key of the corresponding table. The TeamMembers and Managers tables should have composite primary keys because they represent many-to-many relationships. Each of these tables joins two other tables on their primary keys, enabling you to map persons to teams either as members or as managers."
 
+![image](https://github.com/ErikSierra/SQL_IT/assets/120680439/f9f70b78-9b13-4608-a505-7d46e08ce6f7)
 
-![image](https://github.com/ErikSierra/SQL_IT/assets/120680439/2969d1b0-612f-4e9d-978f-7fcf1665dfbc)
 ![image](https://github.com/ErikSierra/SQL_IT/assets/120680439/3239842a-93c1-4580-b4e0-adbb1375afa2)
 
 
