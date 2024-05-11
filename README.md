@@ -1,66 +1,65 @@
 # SQL_IT
-IT Directory using the coding language SQL
+## IT Directory using SQL
 
-***"Please note that the information contained in the SQL and Excel files provided is purely for testing and demonstration purposes only. The data presented does not represent any actual individuals or organizations, and are purely fictitious. Any resemblance to real persons, living or dead, is purely coincidental."***
+**Disclaimer**: The information in the SQL and Excel files is for testing and demonstration purposes only. It is entirely fictitious, representing no actual individuals or organizations. Any resemblance to real persons, living or dead, is coincidental.
 
-This sql database is used to represent the hiearchy and organizational structure within an IT department. 
-I have defined the different tables and their relatations to each other within the database
-*****************************************************************************************************************************************************************************************************************
-Departments Table
-Columns:
-DepartmentID (PK)
-DepartmentName
-HeadPersonID (FK)
-Primary Key: DepartmentID
-Foreign Key: HeadPersonID references PersonID in the Persons table.
+### Overview
+This SQL database models the hierarchy and organizational structure of an IT department. Below are the details of the tables included and their relationships.
 
-Teams Table
-Columns:
-TeamID (PK)
-TeamName
-DepartmentID (FK)
-Primary Key: TeamID
-Foreign Key: DepartmentID references DepartmentID in the Departments table.
+### Tables
 
-Persons Table
-Columns:
-PersonID (PK)
-FirstName
-LastName
-Email
-RoleID (FK)
-Location
-Primary Key: PersonID
-Foreign Key: RoleID references RoleID in the Code table (presumably named Roles in actuality).
+#### Departments
+- **Columns**:
+  - `DepartmentID` (PK)
+  - `DepartmentName`
+  - `HeadPersonID` (FK)
+- **Primary Key**: `DepartmentID`
+- **Foreign Key**: `HeadPersonID` references `PersonID` in the Persons table.
 
-Roles Table
-Columns:
-RoleID (PK)
-RoleName
-Primary Key: RoleID
+#### Teams
+- **Columns**:
+  - `TeamID` (PK)
+  - `TeamName`
+  - `DepartmentID` (FK)
+- **Primary Key**: `TeamID`
+- **Foreign Key**: `DepartmentID` references `DepartmentID` in the Departments table.
 
-TeamMembers Table
-Columns:
-PersonID (FK)
-TeamID (FK)
-Primary Key: None specified in the diagram, but it should be a composite key of (PersonID, TeamID).
-Foreign Keys:
-PersonID references PersonID in the Persons table.
-TeamID references TeamID in the Teams table.
+#### Persons
+- **Columns**:
+  - `PersonID` (PK)
+  - `FirstName`
+  - `LastName`
+  - `Email`
+  - `RoleID` (FK)
+  - `Location`
+- **Primary Key**: `PersonID`
+- **Foreign Key**: `RoleID` references `RoleID` in the Roles table.
 
-Managers Table
-Columns:
-PersonID (FK)
-TeamID (FK)
-Primary Key: None specified in the diagram, but it should be a composite key of (PersonID, TeamID).
-Foreign Keys:
-PersonID references PersonID in the Persons table.
-TeamID references TeamID in the Teams table.
+#### Roles
+- **Columns**:
+  - `RoleID` (PK)
+  - `RoleName`
+- **Primary Key**: `RoleID`
 
-For each foreign key, there is an implied reference to the primary key of the corresponding table. The TeamMembers and Managers tables should have composite primary keys because they represent many-to-many relationships. Each of these tables joins two other tables on their primary keys, enabling you to map persons to teams either as members or as managers."
+#### TeamMembers
+- **Columns**:
+  - `PersonID` (FK)
+  - `TeamID` (FK)
+- **Composite Primary Key**: `(PersonID, TeamID)`
+- **Foreign Keys**:
+  - `PersonID` references `PersonID` in the Persons table.
+  - `TeamID` references `TeamID` in the Teams table.
 
-![image](https://github.com/ErikSierra/SQL_IT/assets/120680439/f9f70b78-9b13-4608-a505-7d46e08ce6f7)
+#### Managers
+- **Columns**:
+  - `PersonID` (FK)
+  - `TeamID` (FK)
+- **Composite Primary Key**: `(PersonID, TeamID)`
+- **Foreign Keys**:
+  - `PersonID` references `PersonID` in the Persons table.
+  - `TeamID` references `TeamID` in the Teams table.
 
-![image](https://github.com/ErikSierra/SQL_IT/assets/120680439/3239842a-93c1-4580-b4e0-adbb1375afa2)
-
-
+### Diagrams
+For visual representation of the database structure, see the links below:
+- ![Database Diagram 1](https://github.com/ErikSierra/SQL_IT/assets/120680439/f9f70b78-9b13-4608-a505-7d46e08ce6f7)
+- ![Database Diagram 2](https://github.com/ErikSierra/SQL_IT/assets/120680439/3239842a-93c1-4580-b4e0-adbb1375afa2)
